@@ -1,44 +1,80 @@
 "use client";
 
-import { Space } from "antd";
 import { ReactNode } from "react";
 
+import useRoute from "@/shared/hooks/useRoute";
+import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { Button, Card, Flex, Image, Layout, Tooltip, Typography } from "antd";
+
+const { Text } = Typography;
+const { Content } = Layout;
+
 export default function AuthLayout({ children }: { children: ReactNode }) {
+	const { redirect } = useRoute();
+
 	return (
-		<div
-			style={{
-				minHeight: "100vh",
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				backgroundColor: "#f0f2f5",
-				padding: "2rem",
-			}}
-		>
-			<div
+		<Layout style={{ height: "100vh" }}>
+			<Content
 				style={{
-					width: "100%",
-					maxWidth: 500,
-					backgroundColor: "white",
-					borderRadius: 8,
-					padding: "2rem",
-					boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+					flex: 1,
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					padding: "24px",
 				}}
 			>
-				{/* Logo */}
-				<div style={{ textAlign: "center", marginBottom: "2rem" }}>
-					<img
-						src="/images/logo/logo-wordmark.png"
-						alt="Maraneyma"
-						style={{ width: 150 }}
-					/>
-				</div>
+				<Flex
+					vertical
+					align="center"
+					justify="space-between"
+					gap={40}
+					style={{ height: "100%", width: "100%", padding: "40px 80px" }}
+				>
+					<Flex
+						align="center"
+						justify="space-between"
+						style={{ width: "100%" }}
+					>
+						<Tooltip title="Voltar">
+							<Button
+								color="primary"
+								variant="link"
+								icon={<ArrowLeftOutlined style={{ fontSize: 24 }} />}
+								onClick={() => redirect(PathRoutes.HOME)}
+							/>
+						</Tooltip>
 
-				{/* Conteúdo da página */}
-				<Space direction="vertical" size={16} style={{ width: "100%" }}>
-					{children}
-				</Space>
-			</div>
-		</div>
+						<Image
+							src="/images/logo/logo-wordmark.png"
+							alt="logo Maraneyma"
+							style={{ maxWidth: "160px", width: "40vw", objectFit: "contain" }}
+						/>
+
+						<div />
+					</Flex>
+
+					<Card
+						style={{
+							width: "100%",
+							height: "100%",
+							borderRadius: 12,
+							boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+							padding: 40,
+						}}
+						styles={{ body: { padding: 0 } }}
+					>
+						{children}
+					</Card>
+
+					<Flex align="center" justify="center">
+						<Text type="secondary">
+							© {new Date().getFullYear()} Maraneyma. Todos os direitos
+							reservados.
+						</Text>
+					</Flex>
+				</Flex>
+			</Content>
+		</Layout>
 	);
 }
