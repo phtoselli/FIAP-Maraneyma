@@ -1,8 +1,9 @@
+import "@/styles/globals.css";
+
 import AntdRegistryProvider from "@/providers/antd/AntdRegistryProvider";
 import AntdThemeProvider from "@/providers/antd/AntdThemeProvider";
-import type { Metadata } from "next";
 
-import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Maraneyma",
