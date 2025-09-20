@@ -211,7 +211,7 @@ export default function Home() {
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "center",
-								height: isMobile ? "100%" : "190px",
+								height: isMobile ? "100%" : "200px",
 								padding: isMobile ? "0 16px" : "0 0 35px 80px",
 							}}
 						>
@@ -256,7 +256,7 @@ export default function Home() {
 								alignItems: "flex-end",
 								position: "relative",
 								overflow: "visible",
-								height: isMobile ? "100%" : "190px",
+								height: isMobile ? "100%" : "200px",
 							}}
 						>
 							<Image
@@ -265,7 +265,7 @@ export default function Home() {
 								preview={false}
 								style={{
 									position: "relative",
-									top: isMobile ? 0 : 60,
+									top: isMobile ? 0 : 50,
 									width: "80%",
 									height: "auto",
 								}}
@@ -275,7 +275,6 @@ export default function Home() {
 				</Card>
 
 				{/* Cards Features */}
-				<Divider />
 				<Row gutter={[16, 16]}>
 					<RenderCards />
 				</Row>
@@ -291,7 +290,7 @@ export default function Home() {
 						</Title>
 					</Col>
 
-					<Col xs={12} md={6} style={{ display: "flex", alignItems: "center" }}>
+					<Col xs={12} md={6}>
 						<Flex vertical>
 							<Title level={5}>Competição individual</Title>
 							{esportesIndividuais.map((e, i) => (
@@ -311,7 +310,7 @@ export default function Home() {
 						</Flex>
 					</Col>
 
-					<Col xs={12} md={6} style={{ display: "flex", alignItems: "center" }}>
+					<Col xs={12} md={6}>
 						<Flex vertical>
 							<Title level={5}>Competição de equipes</Title>
 							{esportesEquipes.map((e, i) => (
@@ -346,8 +345,14 @@ export default function Home() {
 							style={{ height: "60%" }}
 						/>
 
-						<Flex vertical style={{ padding: "16px" }}>
-							<Paragraph>
+						<Flex
+							vertical
+							style={{
+								padding: "16px",
+								width: "260px",
+							}}
+						>
+							<Paragraph type="secondary">
 								Nossa curadoria de esportes foi{" "}
 								<strong>
 									pensada para atender a grande maioria das escolas brasileiras
@@ -355,7 +360,7 @@ export default function Home() {
 								, muitas delas longe de grandes centros e com pouca
 								infraestrutura.
 							</Paragraph>
-							<Paragraph>
+							<Paragraph type="secondary">
 								Cada um dos esportes oferecidos foi pensado para que pudesse ser{" "}
 								<strong>
 									adaptado com materiais baratos e mais fáceis de encontrar.
@@ -364,7 +369,15 @@ export default function Home() {
 						</Flex>
 					</Col>
 
-					<Col xs={24} md={6}>
+					<Col
+						xs={24}
+						md={6}
+						style={{
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
 						<Flex align="center" justify="center" style={{ height: "180px" }}>
 							<Image
 								src="/images/illustrations/sack-race.png"
