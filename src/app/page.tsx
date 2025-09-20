@@ -349,7 +349,7 @@ export default function Home() {
 							vertical
 							style={{
 								padding: "16px",
-								width: "260px",
+								width: isMobile ? "100%" : "260px",
 							}}
 						>
 							<Paragraph type="secondary">
