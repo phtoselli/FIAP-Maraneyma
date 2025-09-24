@@ -2,6 +2,7 @@
 
 "use client";
 
+import { MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/hooks/useRoute/types";
 import { ArrowUpOutlined } from "@ant-design/icons";
@@ -84,8 +85,6 @@ const cards = [
 	},
 ];
 
-const MAX_WIDTH = 980;
-
 export default function Home() {
 	const screens = useBreakpoint(); // retorna { xs, sm, md, lg, xl, xxl }
 	const { redirect } = useRoute();
@@ -142,7 +141,7 @@ export default function Home() {
 			>
 				<div
 					style={{
-						maxWidth: MAX_WIDTH,
+						maxWidth: MAX_CONTAINER_WIDTH,
 						width: "100%",
 						margin: "0 auto",
 						padding: "0 16px",
@@ -198,7 +197,7 @@ export default function Home() {
 			>
 				<div
 					style={{
-						maxWidth: MAX_WIDTH,
+						maxWidth: MAX_CONTAINER_WIDTH,
 						width: "100%",
 						margin: "0 auto",
 						padding: "0 16px",
@@ -329,7 +328,7 @@ export default function Home() {
 			<Footer style={{ backgroundColor: token.colorWhite }}>
 				<div
 					style={{
-						maxWidth: MAX_WIDTH,
+						maxWidth: MAX_CONTAINER_WIDTH,
 						width: "100%",
 						margin: "0 auto",
 						padding: "0 16px",

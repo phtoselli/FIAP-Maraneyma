@@ -7,7 +7,7 @@ import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/hooks/useRoute/types";
 import { RightOutlined } from "@ant-design/icons";
 
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 const { Text } = Typography;
 
 export default function DashboardLayout({

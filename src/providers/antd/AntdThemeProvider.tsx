@@ -32,6 +32,7 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 					colorLinkHover: "#EB2F96",
 					colorLinkCustom: "#7B7B7B",
 					colorTitle: "#515151",
+					colorLightGray: "#f2f2f2ff",
 				},
 				components: {
 					Menu: {
@@ -40,6 +41,11 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 					Button: {
 						colorBgTextHover: "#EB2F96",
 						colorText: "#7B7B7B",
+						borderRadius: 4,
+					},
+					Input: {
+						colorBgContainer: "#ffffff",
+						borderRadius: 4,
 					},
 				},
 				algorithm: theme.compactAlgorithm,
