@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import activitiesData from "@/database/activities.json";
 import { IMAGE_FALLBACK_URL } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
 import { Activity, ActivityCategoryDescription } from "@/shared/types/activity";
+import { PathRoutes } from "@/shared/types/routes";
 import { ArrowLeftOutlined, ShareAltOutlined } from "@ant-design/icons";
 import {
 	Breadcrumb,
@@ -21,7 +23,6 @@ import {
 	Typography,
 } from "antd";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const { Title, Text, Link } = Typography;
 

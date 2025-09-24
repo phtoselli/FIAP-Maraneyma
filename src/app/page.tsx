@@ -4,7 +4,7 @@
 
 import { IMAGE_FALLBACK_URL, MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { PathRoutes } from "@/shared/types/routes";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import {
 	Button,

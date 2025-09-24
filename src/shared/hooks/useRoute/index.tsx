@@ -1,9 +1,9 @@
 // hooks/useRoute.ts
 "use client";
 
+import { PathRoutes } from "@/shared/types/routes";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
-import { PathRoutes } from "./types";
 
 export default function useRoute() {
 	const router = useRouter();

@@ -5,7 +5,7 @@ import type { MenuProps } from "antd";
 import { Image, Layout, Menu, theme, Typography } from "antd";
 
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { PathRoutes } from "@/shared/types/routes";
 import {
 	BookOutlined,
 	HomeOutlined,

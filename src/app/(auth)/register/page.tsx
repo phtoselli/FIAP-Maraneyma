@@ -2,7 +2,7 @@
 "use client";
 
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { PathRoutes } from "@/shared/types/routes";
 import {
 	Button,
 	Divider,

@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 import { MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { PathRoutes } from "@/shared/types/routes";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Button, Card, Flex, Grid, Image, Layout, theme, Tooltip } from "antd";
 

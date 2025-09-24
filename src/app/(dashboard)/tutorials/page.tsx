@@ -6,7 +6,7 @@ import {
 	individualActivities,
 } from "@/shared/constants/activities";
 import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/hooks/useRoute/types";
+import { PathRoutes } from "@/shared/types/routes";
 import { Button, Card, Col, Flex, Row, theme, Typography } from "antd";
 const { Title, Text } = Typography;
 
