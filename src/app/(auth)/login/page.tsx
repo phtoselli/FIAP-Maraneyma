@@ -75,6 +75,7 @@ export default function LoginPage() {
 						fontWeight: "bold",
 						borderColor: "#D9D9D9",
 					}}
+					onClick={doLogin}
 				>
 					Continue com o Google
 				</Button>
