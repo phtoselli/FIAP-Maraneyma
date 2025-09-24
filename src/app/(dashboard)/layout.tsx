@@ -165,7 +165,7 @@ export default function DashboardLayout({
 					}}
 				>
 					<Image
-						src="/images/logo/logo-wordmark.png"
+						src="/images/logo/logo-wordmark.svg"
 						alt="Logo"
 						preview={false}
 					/>

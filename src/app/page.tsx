@@ -49,39 +49,39 @@ const cards = [
 		title: "Crie competições e campeonatos entre os alunos",
 		description:
 			"Crie e gerencie campeonatos, cadastrando equipes e participantes",
-		image: "/images/illustrations/run.png",
+		image: "/images/illustrations/run.svg",
 	},
 	{
 		title: "Funciona offline (e sincroniza quando voltar a ter conexão)",
 		description:
 			"Não precisa ter internet para usar o aplicativo nem para cadastrar a pontuação dos jogos. Você pode sincronizar os resultados posteriormente",
-		image: "/images/illustrations/jump-rope.png",
+		image: "/images/illustrations/jump-rope.svg",
 	},
 	{
 		title: "Para escolas com pouca ou nenhuma infra-estrutura disponível",
 		description:
 			"Pensamos em jogos e brincadeiras para escolas com pouca infra estrutura, sem quadras e sem equipamentos caros",
-		image: "/images/illustrations/shuttlecock.png",
+		image: "/images/illustrations/shuttlecock.svg",
 	},
 	{
 		title:
 			"Tutoriais que ajuda os professores a criarem competições e improvisar",
 		description:
 			"Criamos uma série de conteúdos para te ajudar a entender a dinâmica das brincadeiras e como improvisar com o que tem",
-		image: "/images/illustrations/music-chair.png",
+		image: "/images/illustrations/music-chair.svg",
 	},
 	{
 		title: "Rankings pra acompanhar os campeonatos e os participantes",
 		description:
 			"Quem está na frente do campeonato? Qual o participantes com mais vitórias?",
-		image: "/images/illustrations/soccer.png",
+		image: "/images/illustrations/soccer.svg",
 	},
 	{
 		title:
 			"Simples, fácil e acessível. Feito pra democratizar a prática de esportes",
 		description:
 			"Feito para transpor barreiras, com linguagem simples e acessível.",
-		image: "/images/illustrations/tug-war.png",
+		image: "/images/illustrations/tug-war.svg",
 	},
 ];
 
@@ -217,7 +217,7 @@ export default function Home() {
 					>
 						<Image
 							alt="Logo Maraneyma"
-							src="/images/logo/logo-wordmark.png"
+							src="/images/logo/logo-wordmark.svg"
 							preview={false}
 						/>
 					</Flex>
@@ -460,7 +460,7 @@ export default function Home() {
 						>
 							<Flex align="center" justify="center" style={{ height: "180px" }}>
 								<Image
-									src="/images/illustrations/sack-race.png"
+									src="/images/illustrations/sack-race.svg"
 									alt="Ilustração crianças"
 									preview={false}
 									style={{ height: "100%" }}
@@ -480,7 +480,7 @@ export default function Home() {
 					>
 						<Col xs={24} md={12}>
 							<Image
-								src="/images/logo/logo-wordmark-vertical.png"
+								src="/images/logo/logo-wordmark-vertical.svg"
 								alt="Logo Maraneyma"
 								preview={false}
 							/>

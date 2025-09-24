@@ -50,7 +50,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 							</Tooltip>
 
 							<Image
-								src="/images/logo/logo-wordmark.png"
+								src="/images/logo/logo-wordmark.svg"
 								alt="logo Maraneyma"
 								style={{
 									maxWidth: "160px",

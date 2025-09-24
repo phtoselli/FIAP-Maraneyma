@@ -61,7 +61,7 @@ export default function LoginPage() {
 				<Button
 					icon={
 						<Image
-							src="/images/logo/google-logo.png"
+							src="/images/logo/google-logo.svg"
 							alt="logo Google"
 							preview={false}
 							width={28}

@@ -23,7 +23,7 @@ import {
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const { Title, Text } = Typography;
+const { Title, Text, Link } = Typography;
 
 export default function ActivityDetails() {
 	const params = useParams();
@@ -79,17 +79,21 @@ export default function ActivityDetails() {
 			<Button
 				color="primary"
 				variant="link"
-				icon={<ArrowLeftOutlined />}
+				icon={<ArrowLeftOutlined style={{ fontSize: "32px" }} />}
 				onClick={() => redirect(PathRoutes.TUTORIALS)}
 				style={{ marginBottom: "1rem", padding: 0 }}
 			/>
 
 			<Breadcrumb
-				style={{ marginBottom: "1rem" }}
 				items={[
 					{
 						title: (
-							<a onClick={() => redirect(PathRoutes.TUTORIALS)}>Tutoriais</a>
+							<Link
+								onClick={() => redirect(PathRoutes.TUTORIALS)}
+								style={{ color: token.colorPrimary }}
+							>
+								Tutoriais
+							</Link>
 						),
 					},
 					{
@@ -98,9 +102,11 @@ export default function ActivityDetails() {
 				]}
 			/>
 
-			<Row gutter={[24, 24]} align="middle">
+			<Row gutter={16} align="middle">
 				<Col xs={24} md={14}>
-					<Title level={2}>{currentActivity.title}</Title>
+					<Title level={2} style={{ padding: 0, margin: "8px 0px" }}>
+						{currentActivity.title}
+					</Title>
 
 					<Tag color="yellow">
 						{ActivityCategoryDescription[currentActivity.category]}
@@ -130,15 +136,17 @@ export default function ActivityDetails() {
 				</Col>
 			</Row>
 
-			<Divider style={{ margin: "2rem 0" }} />
+			<Divider style={{ margin: "1rem 0" }} />
 
 			{currentActivity.tips.map((tip, index) => (
 				<Collapse
 					key={`${tip.title}-${index}`}
 					accordion
+					defaultActiveKey={[`${tip.title}-${index}`]}
 					style={{ marginBottom: "1rem", borderRadius: 2 }}
 					items={[
 						{
+							key: `${tip.title}-${index}`,
 							label: tip.title,
 							styles: { body: { backgroundColor: token.colorWhite } },
 							children: (

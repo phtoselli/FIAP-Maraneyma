@@ -4,7 +4,7 @@
     "title": "Cabo de guerra",
     "category": "group",
     "description": "Um esporte de força onde duas equipes puxam uma corda em direções opostas, com o objetivo de puxar a equipe adversária para o seu lado.",
-    "image": "/images/illustrations/tug-war.png",
+    "image": "/images/illustrations/tug-war.svg",
     "tips": [
       {
         "title": "Dicas de segurança",
@@ -35,7 +35,7 @@
     "title": "Corrida de revezamento",
     "category": "group",
     "description": "Uma modalidade de corrida onde equipes se alternam correndo trechos de um percurso, passando um bastão para o próximo corredor.",
-    "image": "/images/illustrations/run.png",
+    "image": "/images/illustrations/run.svg",
     "tips": [
       {
         "title": "Dicas para passar o bastão",
@@ -66,7 +66,7 @@
     "title": "Futebol",
     "category": "group",
     "description": "Um esporte coletivo jogado com uma bola, onde o objetivo é marcar gols chutando a bola para dentro da meta adversária.",
-    "image": "/images/illustrations/soccer.png",
+    "image": "/images/illustrations/soccer.svg",
     "tips": [
       {
         "title": "Táticas básicas",
@@ -97,7 +97,7 @@
     "title": "Handball",
     "category": "group",
     "description": "Um esporte de equipe onde os jogadores lançam uma bola com as mãos para marcar gols em uma meta.",
-    "image": "/images/illustrations/handball.png",
+    "image": "/images/illustrations/handball.svg",
     "tips": [
       {
         "title": "Regras básicas",
@@ -128,7 +128,7 @@
     "title": "Peteca",
     "category": "group",
     "description": "Um esporte de raquete onde os jogadores utilizam raquetes para golpear uma peteca sobre uma rede.",
-    "image": "/images/illustrations/shuttlecock.png",
+    "image": "/images/illustrations/shuttlecock.svg",
     "tips": [
       {
         "title": "Técnicas",
@@ -148,7 +148,7 @@
     "title": "Queimada (Carimbada)",
     "category": "group",
     "description": "Um jogo onde um time tenta acertar os jogadores do time adversário com uma bola, 'queimando-os' para eliminá-los do jogo.",
-    "image": "/images/illustrations/queimada-carimbada.png",
+    "image": "/images/illustrations/queimada-carimbada.svg",
     "tips": [
       {
         "title": "Estratégias",
@@ -168,7 +168,7 @@
     "title": "Amarelinha",
     "category": "individual",
     "description": "Um jogo clássico onde os jogadores lançam uma pedra em casas desenhadas no chão e pulam em um pé só, seguindo um percurso determinado.",
-    "image": "/images/illustrations/amarelinha.png",
+    "image": "/images/illustrations/amarelinha.svg",
     "tips": [
       {
         "title": "Dicas para pular",
@@ -188,7 +188,7 @@
     "title": "Corrida",
     "category": "individual",
     "description": "Uma disputa simples onde os participantes correm para ver quem chega primeiro a um ponto determinado.",
-    "image": "/images/illustrations/run.png",
+    "image": "/images/illustrations/run.svg",
     "tips": [
       {
         "title": "Treinamento",
@@ -208,7 +208,7 @@
     "title": "Corrida de saco",
     "category": "individual",
     "description": "Uma corrida divertida onde os participantes colocam as pernas dentro de um saco e pulam até a linha de chegada.",
-    "image": "/images/illustrations/sack-race.png",
+    "image": "/images/illustrations/sack-race.svg",
     "tips": [
       {
         "title": "Dicas",
@@ -228,7 +228,7 @@
     "title": "Dança das cadeiras",
     "category": "individual",
     "description": "Um jogo musical onde os participantes dançam ao redor de cadeiras e, quando a música para, cada um deve sentar em uma cadeira disponível, com uma cadeira a menos a cada rodada.",
-    "image": "/images/illustrations/music-chair.png",
+    "image": "/images/illustrations/music-chair.svg",
     "tips": [
       {
         "title": "Dicas",
@@ -248,7 +248,7 @@
     "title": "Pega-pega",
     "category": "individual",
     "description": "Um jogo de perseguição onde um jogador é o 'pegador' e tenta tocar nos outros jogadores, que correm para não serem pegos.",
-    "image": "/images/illustrations/pega-pega.png",
+    "image": "/images/illustrations/pega-pega.svg",
     "tips": [
       {
         "title": "Estratégias",
@@ -268,7 +268,7 @@
     "title": "Pular corda",
     "category": "individual",
     "description": "Uma atividade que envolve pular repetidamente sobre uma corda em movimento, individualmente ou em grupo.",
-    "image": "/images/illustrations/jump-rope.png",
+    "image": "/images/illustrations/jump-rope.svg",
     "tips": [
       {
         "title": "Dicas",
