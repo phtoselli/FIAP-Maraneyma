@@ -26,6 +26,7 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 					colorPrimary: "#EB2F96",
 					borderRadius: 8,
 					colorBgContainer: "#F1F5F4",
+					colorBgContainerLight: "#f6f6f6ff",
 					colorBgLayout: "#F0F4F3",
 					colorBlack: "#000000",
 					colorLink: "#B1DAFF",
@@ -46,6 +47,9 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 					Input: {
 						colorBgContainer: "#ffffff",
 						borderRadius: 4,
+					},
+					Collapse: {
+						borderRadius: 2,
 					},
 				},
 				algorithm: theme.compactAlgorithm,

@@ -2,7 +2,7 @@
 
 "use client";
 
-import { MAX_CONTAINER_WIDTH } from "@/shared/constants";
+import { IMAGE_FALLBACK_URL, MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/hooks/useRoute/types";
 import { ArrowUpOutlined } from "@ant-design/icons";
@@ -110,7 +110,12 @@ export default function Home() {
 						style={{ textAlign: "center" }}
 					>
 						{card.image && (
-							<Image src={card.image} alt={card.title} preview={false} />
+							<Image
+								src={card.image}
+								alt={card.title}
+								preview={false}
+								fallback={IMAGE_FALLBACK_URL}
+							/>
 						)}
 						<Title level={5}>{card.title}</Title>
 						<Text>{card.description}</Text>
@@ -312,6 +317,7 @@ export default function Home() {
 											width: "80%",
 											height: "auto",
 										}}
+										fallback={IMAGE_FALLBACK_URL}
 									/>
 								</Col>
 							</Row>
@@ -458,6 +464,7 @@ export default function Home() {
 									alt="Ilustração crianças"
 									preview={false}
 									style={{ height: "100%" }}
+									fallback={IMAGE_FALLBACK_URL}
 								/>
 							</Flex>
 						</Col>

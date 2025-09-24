@@ -1,9 +1,9 @@
 export enum PathRoutes {
-	CHAMPIONSHIP = "/dashboard/championship",
-	DASHBOARD = "/dashboard",
+	CHAMPIONSHIP = "/championship",
+	DASHBOARD = "/home",
 	HOME = "/",
 	LOGIN = "/login",
-	RANKING = "/dashboard/ranking",
+	RANKING = "/ranking",
 	REGISTER = "/register",
-	TUTORIALS = "/dashboard/tutorials",
+	TUTORIALS = "/tutorials",
 }
