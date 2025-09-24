@@ -1,26 +1,53 @@
 "use client";
 
-import { Button, Input, Typography } from "antd";
-import Link from "next/link";
+import useRoute from "@/shared/hooks/useRoute";
+import { Divider, Flex, Typography } from "antd";
 
-const { Title } = Typography;
+const { Text } = Typography;
 
 export default function LoginPage() {
+	const { redirect } = useRoute();
+
+	const doLogin = () => {};
+
 	return (
-		<div style={{ width: "100%" }}>
-			<Title level={4}>Entrar</Title>
+		<Flex
+			align="center"
+			justify="space-between"
+			style={{ height: "100%", width: "100%" }}
+		>
+			<Flex align="center" justify="center" style={{ height: "100%" }}>
+				<p>a</p>
+			</Flex>
 
-			<Input placeholder="Email" style={{ marginBottom: 16 }} />
-			<Input.Password placeholder="Senha" style={{ marginBottom: 16 }} />
+			<Flex
+				vertical
+				align="center"
+				justify="center"
+				gap={8}
+				style={{
+					width: "40px",
+					height: "100%",
+				}}
+			>
+				<Divider
+					type="vertical"
+					style={{ flex: 1, height: "100%", margin: 0 }}
+				/>
 
-			<Button type="primary" block style={{ marginBottom: 16 }}>
-				Entrar
-			</Button>
+				<Text strong style={{ background: "#fff", padding: "0 4px" }}>
+					OU
+				</Text>
 
-			<div style={{ textAlign: "center" }}>
-				<span>Não tem uma conta? </span>
-				<Link href="/register">Criar conta</Link>
-			</div>
-		</div>
+				<Divider
+					type="vertical"
+					style={{ flex: 1, height: "100%", margin: 0 }}
+				/>
+			</Flex>
+
+			<Flex align="center" justify="center" style={{ height: "100%" }}>
+				<p>b</p>
+			</Flex>
+		</Flex>
 	);
 }

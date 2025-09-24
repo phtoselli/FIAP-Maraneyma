@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "./globals.css";
 
 import AntdRegistryProvider from "@/providers/antd/AntdRegistryProvider";
 import AntdThemeProvider from "@/providers/antd/AntdThemeProvider";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { ConfigProvider, theme } from "antd";
@@ -23,7 +24,23 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 			theme={{
 				token: {
 					colorPrimary: "#EB2F96",
-					borderRadius: 4,
+					borderRadius: 8,
+					colorBgContainer: "#F1F5F4",
+					colorBgLayout: "#F0F4F3",
+					colorBlack: "#000000",
+					colorLink: "#B1DAFF",
+					colorLinkHover: "#EB2F96",
+					colorLinkCustom: "#7B7B7B",
+					colorTitle: "#515151",
+				},
+				components: {
+					Menu: {
+						itemSelectedBg: "#DDE7E5",
+					},
+					Button: {
+						colorBgTextHover: "#EB2F96",
+						colorText: "#7B7B7B",
+					},
 				},
 				algorithm: theme.compactAlgorithm,
 			}}

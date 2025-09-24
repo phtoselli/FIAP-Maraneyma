@@ -1,30 +1,48 @@
 "use client";
 
-import { Button, Input, Radio, Typography } from "antd";
-const { Title, Text } = Typography;
+import { Divider, Flex, Typography } from "antd";
+
+const { Text } = Typography;
 
 export default function RegisterPage() {
 	return (
-		<div style={{ width: "100%" }}>
-			<Title level={4}>Seus dados</Title>
-			<Text type="secondary">Complete seus dados</Text>
+		<Flex
+			align="center"
+			justify="space-between"
+			style={{ height: "100%", width: "100%" }}
+		>
+			<Flex align="center" justify="center" style={{ height: "100%" }}>
+				<p>a</p>
+			</Flex>
 
-			<div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-				<Input placeholder="Seu nome" />
-				<Input placeholder="Email" />
-			</div>
+			<Flex
+				vertical
+				align="center"
+				justify="center"
+				gap={8}
+				style={{
+					width: "40px",
+					height: "100%",
+				}}
+			>
+				<Divider
+					type="vertical"
+					style={{ flex: 1, height: "100%", margin: 0 }}
+				/>
 
-			<div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-				<Input placeholder="Ano de nascimento" style={{ width: 100 }} />
-				<Radio.Group>
-					<Radio value="professor">Professor</Radio>
-					<Radio value="estudante">Estudante / aluno</Radio>
-				</Radio.Group>
-			</div>
+				<Text strong style={{ background: "#fff", padding: "0 4px" }}>
+					OU
+				</Text>
 
-			<Button type="primary" block style={{ marginTop: "1.5rem" }}>
-				Concluir
-			</Button>
-		</div>
+				<Divider
+					type="vertical"
+					style={{ flex: 1, height: "100%", margin: 0 }}
+				/>
+			</Flex>
+
+			<Flex align="center" justify="center" style={{ height: "100%" }}>
+				<p>b</p>
+			</Flex>
+		</Flex>
 	);
 }

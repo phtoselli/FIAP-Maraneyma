@@ -14,7 +14,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 	const { redirect } = useRoute();
 
 	return (
-		<Layout style={{ height: "100vh" }}>
+		<Layout style={{ padding: 0, margin: 0, height: "100vh" }}>
 			<Content
 				style={{
 					flex: 1,
@@ -56,13 +56,10 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 
 					<Card
 						style={{
-							width: "100%",
-							height: "100%",
-							borderRadius: 12,
-							boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-							padding: 40,
+							width: "800px",
+							height: "400px",
 						}}
-						styles={{ body: { padding: 0 } }}
+						styles={{ body: { padding: 40, height: "100%", width: "100%" } }}
 					>
 						{children}
 					</Card>
