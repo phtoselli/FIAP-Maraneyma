@@ -132,8 +132,9 @@ export default function ActivityDetails() {
 
 			<Divider style={{ margin: "2rem 0" }} />
 
-			{currentActivity.tips.map((tip) => (
+			{currentActivity.tips.map((tip, index) => (
 				<Collapse
+					key={`${tip.title}-${index}`}
 					accordion
 					style={{ marginBottom: "1rem", borderRadius: 2 }}
 					items={[
