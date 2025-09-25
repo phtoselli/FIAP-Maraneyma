@@ -7,14 +7,17 @@ import { CustomTitle } from "@/shared/components/CustomTitle";
 import NotFoundResult from "@/shared/components/NotFoundResult";
 import { IMAGE_FALLBACK_URL } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
-import { Activity, ActivityCategoryDescription } from "@/shared/types/activity";
+import {
+	Activity,
+	ActivityCategoryDescription,
+	ActivityTip,
+} from "@/shared/types/activity";
 import { PathRoutes } from "@/shared/types/routes";
 import { ArrowLeftOutlined, ShareAltOutlined } from "@ant-design/icons";
 import {
 	Breadcrumb,
 	Button,
 	Col,
-	Collapse,
 	Divider,
 	Image,
 	Row,
@@ -23,6 +26,7 @@ import {
 	Typography,
 } from "antd";
 import { useParams } from "next/navigation";
+import CollapseRenderer from "./components/CollapseRenderer";
 import LoadingSkeleton from "./components/LoadingSkeleton";
 
 const { Text, Link } = Typography;
@@ -117,31 +121,11 @@ export default function ActivityDetails() {
 
 			<Divider style={{ margin: "16px 0" }} />
 
-			{currentActivity.tips.map((tip, index) => (
-				<Collapse
+			{currentActivity.tips.map((tip: ActivityTip, index) => (
+				<CollapseRenderer
 					key={`${tip.title}-${index}`}
-					accordion
-					defaultActiveKey={[`${tip.title}-${index}`]}
-					style={{ marginBottom: "16px" }}
-					items={[
-						{
-							key: `${tip.title}-${index}`,
-							label: tip.title,
-							styles: { body: { backgroundColor: token.colorWhite } },
-							children: (
-								<>
-									{tip.description && <Text>{tip.description}</Text>}
-									<ul>
-										{tip.items.map((item, i) => (
-											<li key={i}>
-												<Text>{item.content}</Text>
-											</li>
-										))}
-									</ul>
-								</>
-							),
-						},
-					]}
+					tip={tip}
+					index={index}
 				/>
 			))}
 		</>

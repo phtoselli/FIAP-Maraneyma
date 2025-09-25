@@ -1,8 +1,9 @@
 "use client";
 
 import type { MenuProps } from "antd";
-import { Image, Layout, Menu, theme, Typography } from "antd";
+import { Flex, Image, Layout, Menu, Typography } from "antd";
 
+import UserActionCard from "@/shared/components/UserActionCard";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/types/routes";
 
@@ -15,7 +16,6 @@ export default function DashboardLayout({
 	children: React.ReactNode;
 }) {
 	const { redirect } = useRoute();
-	const { token } = theme.useToken();
 
 	const handleMenuClick: MenuProps["onClick"] = ({ key }) => {
 		redirect(key as PathRoutes);
@@ -140,7 +140,9 @@ export default function DashboardLayout({
 	return (
 		<Layout style={{ height: "100vh" }}>
 			<Sider breakpoint="lg" collapsedWidth="0">
-				<div
+				<Flex
+					align="center"
+					justify="center"
 					style={{
 						height: 64,
 						margin: "16px 16px 40px 16px",
@@ -152,7 +154,7 @@ export default function DashboardLayout({
 						alt="Logo"
 						preview={false}
 					/>
-				</div>
+				</Flex>
 
 				<Menu
 					mode="inline"
@@ -161,6 +163,10 @@ export default function DashboardLayout({
 					defaultSelectedKeys={["/dashboard"]}
 					style={{ padding: 4 }}
 				/>
+
+				<Flex align="center" justify="center" style={{ padding: 16 }}>
+					<UserActionCard />
+				</Flex>
 			</Sider>
 
 			<Layout

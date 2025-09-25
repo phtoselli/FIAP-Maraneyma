@@ -7,6 +7,7 @@ import { ConfigProvider, theme } from "antd";
 
 export const root = {
 	colorWhite: "#ffffff",
+	colorWhiteTransparent: "#ffffffa9",
 	colorBlack: "#000000",
 
 	colorPrimary: "#EB2F96",

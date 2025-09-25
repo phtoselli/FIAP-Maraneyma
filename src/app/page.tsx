@@ -1,5 +1,6 @@
 "use client";
 
+import { root } from "@/providers/antd/AntdThemeProvider";
 import { CustomTitle } from "@/shared/components/CustomTitle";
 import { IMAGE_FALLBACK_URL, MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
@@ -160,7 +161,7 @@ export default function Home() {
 								<Button
 									variant="link"
 									color="default"
-									style={{ color: token.colorLink, padding: 0 }}
+									style={{ color: root.colorLightBlue, padding: 0 }}
 									onClick={() => redirect(PathRoutes.LOGIN)}
 								>
 									Fazer login
@@ -168,13 +169,13 @@ export default function Home() {
 
 								<Divider
 									type="vertical"
-									style={{ backgroundColor: token.colorLink }}
+									style={{ backgroundColor: root.colorLightBlue }}
 								/>
 
 								<Button
 									variant="link"
 									color="default"
-									style={{ color: token.colorLink, padding: 0 }}
+									style={{ color: root.colorLightBlue, padding: 0 }}
 									onClick={() => redirect(PathRoutes.REGISTER)}
 								>
 									Criar conta

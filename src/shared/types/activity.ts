@@ -3,16 +3,18 @@ export enum ActivityCategoryDescription {
 	individual = "Atividade individual",
 }
 
-type ActivityCategory = "group" | "individual";
+export type ActivityCategory = "group" | "individual";
 
-interface ActivityTipItem {
-	content: string;
+export type TipContentType = "ul" | "ol" | "paragraph";
+
+export interface ActivityTipContent {
+	type: TipContentType;
+	content: string[] | string;
 }
 
-interface ActivityTip {
+export interface ActivityTip {
 	title: string;
-	description?: string;
-	items: ActivityTipItem[];
+	content: ActivityTipContent;
 }
 
 export interface Activity {
@@ -20,6 +22,7 @@ export interface Activity {
 	title: string;
 	category: ActivityCategory;
 	description: string;
+	overview?: string;
 	image: string;
 	tips: ActivityTip[];
 }

@@ -41,7 +41,7 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
 				>
 					<Flex vertical gap={4}>
 						<CustomTitle level={5}>{activity.title}</CustomTitle>
-						<Text type="secondary">{activity.description}</Text>
+						<Text type="secondary">{activity.overview}</Text>
 					</Flex>
 
 					<div
