@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import type { MenuProps } from "antd";
@@ -6,13 +5,6 @@ import { Image, Layout, Menu, theme, Typography } from "antd";
 
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/types/routes";
-import {
-	BookOutlined,
-	HomeOutlined,
-	RightOutlined,
-	TeamOutlined,
-	TrophyOutlined,
-} from "@ant-design/icons";
 
 const { Content, Sider } = Layout;
 const { Text } = Typography;
@@ -35,7 +27,6 @@ export default function DashboardLayout({
 			width={12}
 			alt="Seta pra direita"
 			preview={false}
-			fallback={<RightOutlined />}
 		/>
 	);
 
@@ -50,7 +41,6 @@ export default function DashboardLayout({
 						width={24}
 						height={24}
 						preview={false}
-						fallback={<HomeOutlined />}
 					/>
 				</span>
 			),
@@ -77,7 +67,6 @@ export default function DashboardLayout({
 						width={24}
 						height={24}
 						preview={false}
-						fallback={<BookOutlined />}
 					/>
 				</span>
 			),
@@ -104,7 +93,6 @@ export default function DashboardLayout({
 						width={24}
 						height={24}
 						preview={false}
-						fallback={<TeamOutlined />}
 					/>
 				</span>
 			),
@@ -131,7 +119,6 @@ export default function DashboardLayout({
 						width={24}
 						height={24}
 						preview={false}
-						fallback={<TrophyOutlined />}
 					/>
 				</span>
 			),
@@ -152,11 +139,7 @@ export default function DashboardLayout({
 
 	return (
 		<Layout style={{ height: "100vh" }}>
-			<Sider
-				breakpoint="lg"
-				collapsedWidth="0"
-				style={{ background: token.colorBgContainer }}
-			>
+			<Sider breakpoint="lg" collapsedWidth="0">
 				<div
 					style={{
 						height: 64,
@@ -170,6 +153,7 @@ export default function DashboardLayout({
 						preview={false}
 					/>
 				</div>
+
 				<Menu
 					mode="inline"
 					items={menuItems}
@@ -184,7 +168,6 @@ export default function DashboardLayout({
 					flex: 1,
 					display: "flex",
 					flexDirection: "column",
-					background: token.colorWhite,
 				}}
 			>
 				<Content
@@ -192,7 +175,6 @@ export default function DashboardLayout({
 						flex: 1,
 						padding: 48,
 						overflowY: "auto",
-						background: token.colorWhite,
 					}}
 				>
 					{children}

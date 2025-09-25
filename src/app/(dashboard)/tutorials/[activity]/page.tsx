@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 
 import activitiesData from "@/database/activities.json";
+import { CustomTitle } from "@/shared/components/CustomTitle";
+import NotFoundResult from "@/shared/components/NotFoundResult";
 import { IMAGE_FALLBACK_URL } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
 import { Activity, ActivityCategoryDescription } from "@/shared/types/activity";
@@ -15,83 +17,60 @@ import {
 	Collapse,
 	Divider,
 	Image,
-	Result,
 	Row,
-	Skeleton,
 	Tag,
 	theme,
 	Typography,
 } from "antd";
 import { useParams } from "next/navigation";
+import LoadingSkeleton from "./components/LoadingSkeleton";
 
-const { Title, Text, Link } = Typography;
+const { Text, Link } = Typography;
 
 export default function ActivityDetails() {
 	const params = useParams();
-	const { activity } = params;
 	const { redirect } = useRoute();
-
 	const { token } = theme.useToken();
 
+	const { activity } = params;
 	const allActivities: Activity[] = activitiesData as Activity[];
 
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const [currentActivity, setCurrentActivity] = useState<Activity | null>(null);
 
 	useEffect(() => {
+		setLoading(true);
+
 		const foundActivity = allActivities.find((a) => a.id === activity);
 		setCurrentActivity(foundActivity || null);
+
 		setLoading(false);
 	}, [activity]);
 
-	if (loading) {
-		return (
-			<div style={{ padding: "2rem" }}>
-				<Row gutter={[24, 24]} align="middle" style={{ marginTop: "1rem" }}>
-					<Col xs={24} md={14}>
-						<Skeleton.Button
-							style={{ width: 120, marginBottom: "1rem" }}
-							active
-						/>
-						<Skeleton active paragraph={{ rows: 3 }} />
-						<Skeleton.Button style={{ width: 120, marginTop: "1rem" }} active />
-					</Col>
-					<Col xs={24} md={10}>
-						<Skeleton.Image style={{ width: 300, height: 200 }} active />
-					</Col>
-				</Row>
-				<Divider style={{ margin: "2rem 0" }} />
-				<Skeleton active paragraph={{ rows: 3 }} />
-			</div>
-		);
-	}
-
-	if (!currentActivity)
-		return (
-			<Result
-				status="404"
-				title="404!"
-				subTitle="Oops! Atividade não encontrada."
-			/>
-		);
+	if (loading) return <LoadingSkeleton />;
+	if (!currentActivity) return <NotFoundResult />;
 
 	return (
-		<div style={{ padding: "2rem" }}>
+		<>
 			<Button
 				color="primary"
 				variant="link"
-				icon={<ArrowLeftOutlined style={{ fontSize: "32px" }} />}
+				icon={
+					<ArrowLeftOutlined style={{ fontSize: token.fontSizeHeading1 }} />
+				}
 				onClick={() => redirect(PathRoutes.TUTORIALS)}
-				style={{ marginBottom: "1rem", padding: 0 }}
+				style={{ marginBottom: 16, padding: 0 }}
 			/>
 
 			<Breadcrumb
+				style={{ marginBottom: 8 }}
 				items={[
 					{
 						title: (
 							<Link
+								underline
 								onClick={() => redirect(PathRoutes.TUTORIALS)}
-								style={{ color: token.colorPrimary }}
+								style={{ color: "var(--color-primary)", background: "none" }}
 							>
 								Tutoriais
 							</Link>
@@ -105,10 +84,9 @@ export default function ActivityDetails() {
 
 			<Row gutter={16} align="middle">
 				<Col xs={24} md={14}>
-					<Title level={2} style={{ padding: 0, margin: "8px 0px" }}>
+					<CustomTitle level={2} style={{ marginBottom: 8 }}>
 						{currentActivity.title}
-					</Title>
-
+					</CustomTitle>
 					<Tag color="yellow">
 						{ActivityCategoryDescription[currentActivity.category]}
 					</Tag>
@@ -137,14 +115,14 @@ export default function ActivityDetails() {
 				</Col>
 			</Row>
 
-			<Divider style={{ margin: "1rem 0" }} />
+			<Divider style={{ margin: "16px 0" }} />
 
 			{currentActivity.tips.map((tip, index) => (
 				<Collapse
 					key={`${tip.title}-${index}`}
 					accordion
 					defaultActiveKey={[`${tip.title}-${index}`]}
-					style={{ marginBottom: "1rem", borderRadius: 2 }}
+					style={{ marginBottom: "16px" }}
 					items={[
 						{
 							key: `${tip.title}-${index}`,
@@ -166,6 +144,6 @@ export default function ActivityDetails() {
 					]}
 				/>
 			))}
-		</div>
+		</>
 	);
 }

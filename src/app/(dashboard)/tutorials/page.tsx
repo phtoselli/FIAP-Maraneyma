@@ -1,112 +1,46 @@
-// @ts-nocheck
 "use client";
 
-import {
-	groupActivities,
-	individualActivities,
-} from "@/shared/constants/activities";
-import useRoute from "@/shared/hooks/useRoute";
-import { PathRoutes } from "@/shared/types/routes";
-import { Button, Card, Col, Flex, Row, theme, Typography } from "antd";
-const { Title, Text } = Typography;
+import { Flex, Row } from "antd";
+
+import { CustomTitle } from "@/shared/components/CustomTitle";
+import { Activity } from "@/shared/types/activity";
+
+import activitiesData from "@/database/activities.json";
+import ActivityCard from "./components/ActivityCard";
 
 export default function Tutorials() {
-	const { redirect } = useRoute();
+	const allActivities: Activity[] = activitiesData as Activity[];
 
-	const { token } = theme.useToken();
-
-	const ActivityCard = ({ activity }: any) => {
-		return (
-			<Col
-				xs={24}
-				sm={12}
-				md={8}
-				style={{
-					display: "flex",
-					flexDirection: "column",
-				}}
-			>
-				<Card
-					style={{
-						height: "100%",
-						backgroundColor: token.colorBgContainerLight,
-					}}
-					styles={{ body: { height: "100%" } }}
-				>
-					<Flex
-						vertical
-						justify="space-between"
-						gap={8}
-						style={{ width: "100%", height: "100%" }}
-					>
-						<div>
-							<Title level={5} style={{ padding: 0, margin: 0 }}>
-								{activity.title}
-							</Title>
-							<Text type="secondary">{activity.description}</Text>
-						</div>
-
-						<div
-							style={{
-								justifySelf: "end",
-							}}
-						>
-							<Button
-								color="primary"
-								variant="outlined"
-								onClick={() =>
-									redirect(`${PathRoutes.TUTORIALS}/${activity.activity}`)
-								}
-							>
-								Ver detalhes
-							</Button>
-						</div>
-					</Flex>
-				</Card>
-			</Col>
-		);
-	};
+	const groupActivities = allActivities.filter((a) => a.category === "group");
+	const individualActivities = allActivities.filter(
+		(a) => a.category === "individual"
+	);
 
 	return (
-		<div>
-			<Title
-				level={2}
-				style={{ color: token.colorTitle, fontWeight: "bolder" }}
-			>
-				Tutoriais
-			</Title>
+		<Flex gap={16} vertical>
+			<CustomTitle level={2}>Tutoriais</CustomTitle>
 
-			<Title
-				level={4}
-				style={{
-					color: token.colorPrimary,
-					marginTop: "2rem",
-					fontWeight: "bolder",
-				}}
-			>
-				Atividades em grupo
-			</Title>
-			<Row gutter={[16, 16]}>
-				{groupActivities.map((activity, index) => (
-					<ActivityCard key={index} activity={activity} />
-				))}
-			</Row>
+			<Flex gap={8} vertical>
+				<CustomTitle primary level={3}>
+					Atividades em grupo
+				</CustomTitle>
+				<Row gutter={[16, 16]}>
+					{groupActivities?.map((activity, index) => (
+						<ActivityCard key={index} activity={activity} />
+					))}
+				</Row>
+			</Flex>
 
-			<Title
-				level={4}
-				style={{
-					color: token.colorPrimary,
-					marginTop: "2rem",
-					fontWeight: "bolder",
-				}}
-			>
-				Atividades individuais
-			</Title>
-			<Row gutter={[16, 16]}>
-				{individualActivities.map((activity, index) => (
-					<ActivityCard key={index} activity={activity} />
-				))}
-			</Row>
-		</div>
+			<Flex gap={8} vertical>
+				<CustomTitle primary level={3}>
+					Atividades individuais
+				</CustomTitle>
+				<Row gutter={[16, 16]}>
+					{individualActivities?.map((activity, index) => (
+						<ActivityCard key={index} activity={activity} />
+					))}
+				</Row>
+			</Flex>
+		</Flex>
 	);
 }

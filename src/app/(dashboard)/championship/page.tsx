@@ -1,13 +1,7 @@
 "use client";
 
-import { Result } from "antd";
+import BuildingPage from "@/shared/components/BuildingPage";
 
 export default function Championship() {
-	return (
-		<Result
-			status="404"
-			title="404!"
-			subTitle="Oops! Esta página ainda está sendo construída."
-		/>
-	);
+	return <BuildingPage />;
 }

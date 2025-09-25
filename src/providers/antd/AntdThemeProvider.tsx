@@ -1,8 +1,25 @@
-// @ts-nocheck
 "use client";
 
-import { ConfigProvider, theme } from "antd";
 import React from "react";
+
+import { roboto } from "@/styles/fonts";
+import { ConfigProvider, theme } from "antd";
+
+export const root = {
+	colorWhite: "#ffffff",
+	colorBlack: "#000000",
+
+	colorPrimary: "#EB2F96",
+	colorSecondary: "#f48fc6ff",
+	colorLightBlue: "#B1DAFF",
+
+	colorTextPrimary: "#515151",
+	colorTextSecondary: "#7B7B7B",
+
+	colorBglevel0: "#F0F4F3",
+	colorBglevel1: "#F1F5F4",
+	colorBglevel2: "#DDE7E5",
+};
 
 /**
  * ThemeProvider
@@ -23,33 +40,33 @@ const AntdThemeProvider = ({ children }: React.PropsWithChildren) => {
 		<ConfigProvider
 			theme={{
 				token: {
-					colorPrimary: "#EB2F96",
-					borderRadius: 8,
-					colorBgContainer: "#F1F5F4",
-					colorBgContainerLight: "#f6f6f6ff",
-					colorBgLayout: "#F0F4F3",
-					colorBlack: "#000000",
-					colorLink: "#B1DAFF",
-					colorLinkHover: "#EB2F96",
-					colorLinkCustom: "#7B7B7B",
-					colorTitle: "#515151",
-					colorLightGray: "#f2f2f2ff",
+					borderRadius: 4,
+					colorPrimary: root.colorPrimary,
+					colorBgLayout: root.colorBglevel0,
+
+					colorLink: root.colorPrimary,
+					colorLinkHover: root.colorPrimary,
+					colorLinkActive: root.colorSecondary,
+
+					fontFamily: roboto.style.fontFamily,
+					colorTextSecondary: root.colorTextSecondary,
 				},
 				components: {
-					Menu: {
-						itemSelectedBg: "#DDE7E5",
+					Layout: {
+						bodyBg: root.colorWhite,
+						siderBg: root.colorBglevel1,
+						colorBgLayout: root.colorWhite,
+						colorBgContainer: root.colorWhite,
 					},
-					Button: {
-						colorBgTextHover: "#EB2F96",
-						colorText: "#7B7B7B",
-						borderRadius: 4,
+					Menu: {
+						itemSelectedBg: root.colorBglevel2,
+						colorBgContainer: root.colorBglevel1,
 					},
 					Input: {
-						colorBgContainer: "#ffffff",
-						borderRadius: 4,
+						colorBgContainer: root.colorWhite,
 					},
-					Collapse: {
-						borderRadius: 2,
+					Card: {
+						colorBgContainer: root.colorBglevel1,
 					},
 				},
 				algorithm: theme.compactAlgorithm,

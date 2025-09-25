@@ -1,7 +1,6 @@
-// @ts-nocheck
-
 "use client";
 
+import { CustomTitle } from "@/shared/components/CustomTitle";
 import { IMAGE_FALLBACK_URL, MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/types/routes";
@@ -24,7 +23,7 @@ import { useCallback } from "react";
 
 const { useBreakpoint } = Grid;
 const { Header, Content, Footer } = Layout;
-const { Title, Text, Paragraph, Link } = Typography;
+const { Text, Paragraph } = Typography;
 
 const esportesIndividuais = [
 	"Amarelinha",
@@ -104,9 +103,10 @@ export default function Home() {
 					styles={{ body: { padding: "16px 32px" } }}
 				>
 					<Flex
+						gap={8}
+						vertical
 						align="center"
 						justify="center"
-						vertical
 						style={{ textAlign: "center" }}
 					>
 						{card.image && (
@@ -117,8 +117,8 @@ export default function Home() {
 								fallback={IMAGE_FALLBACK_URL}
 							/>
 						)}
-						<Title level={5}>{card.title}</Title>
-						<Text>{card.description}</Text>
+						<CustomTitle level={5}>{card.title}</CustomTitle>
+						<Text type="secondary">{card.description}</Text>
 					</Flex>
 				</Card>
 			</Col>
@@ -137,7 +137,7 @@ export default function Home() {
 		<Layout style={{ padding: 0, margin: 0 }}>
 			<Header
 				style={{
-					backgroundColor: token.colorBlack,
+					backgroundColor: "var(--color-black)",
 					padding: "0 1.5rem",
 					height: 30,
 					display: "flex",
@@ -153,16 +153,7 @@ export default function Home() {
 					}}
 				>
 					<Row justify="space-between" align="middle" style={{ width: "100%" }}>
-						<Col>
-							<Button
-								variant="link"
-								color="default"
-								style={{ color: token.colorLink, padding: 0 }}
-								onClick={() => redirect(PathRoutes.REGISTER)}
-							>
-								Quem somos
-							</Button>
-						</Col>
+						<Col></Col>
 
 						<Col>
 							<Space size={8}>
@@ -241,6 +232,7 @@ export default function Home() {
 								overflow: "visible",
 								backgroundColor: token.colorWhite,
 								padding: 16,
+								borderRadius: 16,
 							}}
 						>
 							<Row
@@ -263,21 +255,18 @@ export default function Home() {
 										padding: isMobile ? "0 16px" : "0 0 24px 24px",
 									}}
 								>
-									<Title
-										level={2}
-										style={{ fontSize: "1.5rem", color: token.colorPrimary }}
-									>
+									<CustomTitle primary level={1}>
 										Seu guia gratuito de{" "}
 										<Text
 											style={{
-												fontSize: "1.5rem",
+												fontSize: token.fontSizeHeading1,
 												color: token.colorPrimary,
-												fontWeight: 800,
+												fontWeight: "bolder",
 											}}
 										>
 											esportes escolares
 										</Text>
-									</Title>
+									</CustomTitle>
 									<Paragraph type="secondary" style={{ fontSize: "1rem" }}>
 										Aplicativo gratuito feito para{" "}
 										<strong>
@@ -341,33 +330,27 @@ export default function Home() {
 					}}
 				>
 					<Row gutter={40}>
-						<Col span={24} style={{ display: "flex", alignItems: "center" }}>
-							<Title
-								level={3}
-								style={{
-									fontSize: "2rem",
-									marginBottom: 40,
-									color: token.colorTitle,
-								}}
-							>
-								Esportes disponíveis
-							</Title>
+						<Col
+							span={24}
+							style={{
+								display: "flex",
+								alignItems: "center",
+								marginBottom: 32,
+							}}
+						>
+							<CustomTitle level={2}>Esportes disponíveis</CustomTitle>
 						</Col>
 
 						<Col xs={12} md={6}>
 							<Flex
 								vertical
-								style={{ borderRight: isMobile ? "none" : "1px solid #D8D8D8" }}
+								style={{
+									borderRight: isMobile
+										? "none"
+										: "1px solid var(--color-light-gray)",
+								}}
 							>
-								<Title
-									level={5}
-									style={{
-										margin: "0px 0px 8px 0px",
-										padding: 0,
-									}}
-								>
-									Competição individual
-								</Title>
+								<CustomTitle level={5}>Competição individual</CustomTitle>
 								{esportesIndividuais.map((e, i) => (
 									<Button
 										key={i}
@@ -388,14 +371,13 @@ export default function Home() {
 						<Col xs={12} md={6}>
 							<Flex
 								vertical
-								style={{ borderRight: isMobile ? "none" : "1px solid #D8D8D8" }}
+								style={{
+									borderRight: isMobile
+										? "none"
+										: "1px solid var(--color-light-gray)",
+								}}
 							>
-								<Title
-									level={5}
-									style={{ margin: "0px 0px 8px 0px", padding: 0 }}
-								>
-									Competição de equipes
-								</Title>
+								<CustomTitle level={5}>Competição de equipes</CustomTitle>
 								{esportesEquipes.map((e, i) => (
 									<Button
 										key={i}

@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 
+import { root } from "@/providers/antd/AntdThemeProvider";
 import { MAX_CONTAINER_WIDTH } from "@/shared/constants";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/types/routes";
@@ -19,7 +20,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 
 	return (
 		<Layout style={{ padding: 0, margin: 0, height: "100vh" }}>
-			<Content>
+			<Content style={{ backgroundColor: root.colorBglevel0 }}>
 				<div
 					style={{
 						maxWidth: MAX_CONTAINER_WIDTH,

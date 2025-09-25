@@ -1,6 +1,6 @@
-// @ts-nocheck
 "use client";
 
+import { CustomTitle } from "@/shared/components/CustomTitle";
 import useRoute from "@/shared/hooks/useRoute";
 import { PathRoutes } from "@/shared/types/routes";
 import {
@@ -16,7 +16,7 @@ import {
 	Typography,
 } from "antd";
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 const { Item } = Form;
 
 export default function LoginPage() {
@@ -25,7 +25,7 @@ export default function LoginPage() {
 
 	const [form] = Form.useForm();
 
-	const doLogin = () => {
+	const onFinish = () => {
 		redirect(PathRoutes.DASHBOARD);
 	};
 
@@ -47,14 +47,10 @@ export default function LoginPage() {
 				}}
 				gap={24}
 			>
-				<Title level={1} style={{ margin: 0, padding: 0 }}>
-					Login
-				</Title>
+				<CustomTitle level={1}>Login</CustomTitle>
 
 				<div>
-					<Title level={3} style={{ color: token.colorTitle }}>
-						Opção mais simples:
-					</Title>
+					<CustomTitle level={3}>Opção mais simples:</CustomTitle>
 					<Text type="secondary">Faça login a partir da sua conta Google</Text>
 				</div>
 
@@ -75,7 +71,7 @@ export default function LoginPage() {
 						fontWeight: "bold",
 						borderColor: "#D9D9D9",
 					}}
-					onClick={doLogin}
+					onClick={onFinish}
 				>
 					Continue com o Google
 				</Button>
@@ -100,7 +96,7 @@ export default function LoginPage() {
 						style={{
 							margin: 0,
 							borderWidth: 2,
-							borderColor: token.colorLightGray,
+							borderColor: "var(--color-light-gray)",
 						}}
 					>
 						OU
@@ -115,7 +111,7 @@ export default function LoginPage() {
 								height: 80,
 								margin: 0,
 								borderWidth: 2,
-								borderColor: token.colorLightGray,
+								borderColor: "var(--color-light-gray)",
 							}}
 						/>
 
@@ -129,7 +125,7 @@ export default function LoginPage() {
 								height: 80,
 								margin: 0,
 								borderWidth: 2,
-								borderColor: token.colorLightGray,
+								borderColor: "var(--color-light-gray)",
 							}}
 						/>
 					</>
@@ -151,7 +147,7 @@ export default function LoginPage() {
 				</div>
 
 				<div>
-					<Form form={form} layout="vertical" onFinish={doLogin}>
+					<Form form={form} layout="vertical" onFinish={onFinish}>
 						<Item name="email" label="Qual o seu email?">
 							<Input placeholder="Email" />
 						</Item>
