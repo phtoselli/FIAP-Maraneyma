@@ -17,6 +17,7 @@ export const CustomTitle = ({ primary, style, ...props }: CustomTitleProps) => {
 				padding: 0,
 				margin: 0,
 				color: primary ? "var(--color-primary)" : "var(--color-title)",
+				fontFamily: sofiaSans.style.fontFamily,
 				...style,
 			}}
 			className={`${sofiaSans.className} ${props.className || ""}`}

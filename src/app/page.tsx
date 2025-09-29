@@ -257,16 +257,7 @@ export default function Home() {
 									}}
 								>
 									<CustomTitle primary level={1}>
-										Seu guia gratuito de{" "}
-										<Text
-											style={{
-												fontSize: token.fontSizeHeading1,
-												color: token.colorPrimary,
-												fontWeight: "bolder",
-											}}
-										>
-											esportes escolares
-										</Text>
+										Seu guia gratuito de esportes escolares
 									</CustomTitle>
 									<Paragraph type="secondary" style={{ fontSize: "1rem" }}>
 										Aplicativo gratuito feito para{" "}
